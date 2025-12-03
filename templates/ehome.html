@@ -1,0 +1,55 @@
+{# templates/ehome.html #}
+{% extends "base.html" %}
+
+{% block title %}Home — Mahila Suraksha Nyayavani{% endblock %}
+
+{% block head_extra %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+{% endblock %}
+
+{% block content %}
+<section class="ticker">
+  <div class="ticker-track">
+    <span>24×7 support · </span>
+    <span>Report digital, emotional or physical violence safely · </span>
+    <span>Your story matters · </span>
+    <span>Safety is a right, not a favour · </span>
+  </div>
+</section>
+
+<section class="hero">
+  <div class="hero-text">
+    <div class="hero-highlight">
+      <span>Because every woman deserves to feel safe</span>
+    </div>
+    <h2>Speak up. We stand with you.</h2>
+    <p>A compassionate, secure space to report crimes, learn your rights, and discover real stories of courage and support.</p>
+
+    <div class="btns">
+      <a class="primary-btn" href="{{ url_for('help_page') }}">Get help now</a>
+      <a class="secondary-btn" href="{{ url_for('report') }}">Report a crime</a>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <div class="hero-visual-pill">Anonymous &amp; confidential</div>
+    <div class="hero-image-wrapper">
+      <img src="{{ url_for('static', filename='images/p1.jpg') }}" class="hero-image" alt="support image" />
+    </div>
+    <h3>“Your voice is your power.”</h3>
+    <p>Share what happened in your own words...</p>
+
+    <div class="hero-metrics">
+      <div class="hero-metric">
+        <strong>24×7</strong>
+        <span>Access to guidance & resources</span>
+      </div>
+      <div class="hero-metric">
+        <strong>3 pillars</strong>
+        <span>Report · Learn · Stay prepared</span>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Physical Violence — Mahila Suraksha Nyayavani{% endblock %}
+
+{% block head_extra %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/article.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="container article-detail">
+  <h1>Physical Violence</h1>
+  <p>Here you can place content about physical violence, safety tips, legal guidance, and resources.</p>
+  <a href="{{ url_for('articles') }}">← Back to articles</a>
+</div>
+{% endblock %}

@@ -1,0 +1,57 @@
+{# templates/ereport.html #}
+{% extends "base.html" %}
+
+{% block title %}Report a Crime — Mahila Suraksha Nyayavani{% endblock %}
+
+{% block head_extra %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/report.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<section id="report" class="container">
+  <h2 id="reportTitle">Crime Reporting Form</h2>
+
+  <form id="crimeForm" enctype="multipart/form-data">
+
+    <label for="name">Your Name</label>
+    <input type="text" id="name" required autocomplete="name" />
+
+    <label for="contact">Email or Phone Number</label>
+    <input type="text" id="contact" required autocomplete="email" />
+
+    <label for="category">Category</label>
+    <select id="category" required>
+      <option value="">Select Category</option>
+      <option value="digital">Digital Violence</option>
+      <option value="emotional">Emotional Violence</option>
+      <option value="physical">Physical Violence</option>
+    </select>
+
+    <label for="location">Location</label>
+    <input type="text" id="location" required autocomplete="off" />
+
+    <label for="incident">Describe the incident</label>
+    <textarea id="incident" rows="4" required></textarea>
+
+    <label for="evidence">Upload Evidence (images/documents, optional)</label>
+    <input type="file" id="evidence" accept="image/*,application/pdf" multiple />
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <p id="formMsg"></p>
+</section>
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+  document.getElementById('crimeForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    document.getElementById('formMsg').innerText =
+      'Report submitted successfully. Authorities will contact you soon.';
+    this.reset();
+  });
+</script>
+{% endblock %}

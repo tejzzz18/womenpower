@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Emotional Violence — Mahila Suraksha Nyayavani{% endblock %}
+
+{% block head_extra %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/article.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="container article-detail">
+  <h1>Emotional Violence</h1>
+  <p>Guides on recognizing emotional abuse, coping strategies, and where to get support.</p>
+  <a href="{{ url_for('articles') }}">← Back to articles</a>
+</div>
+{% endblock %}
